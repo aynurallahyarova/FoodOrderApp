@@ -16,27 +16,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mask group" translatesAutoresizingMaskIntoConstraints="NO" id="U6h-P2-XYy">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="284"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ellipse 1-3" translatesAutoresizingMaskIntoConstraints="NO" id="Lc7-mU-RUZ">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="195"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="284" id="Atl-Ms-7sv"/>
-                                    <constraint firstAttribute="width" constant="393" id="BQB-hn-fY3"/>
+                                    <constraint firstAttribute="width" constant="393" id="8Fy-GW-WVQ"/>
+                                    <constraint firstAttribute="height" constant="195" id="qDo-Fq-dfu"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6F-6y-KTw">
-                                <rect key="frame" x="67" y="654" width="275" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Get Started"/>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObH-l0-PHu">
+                                <rect key="frame" x="46.666666666666657" y="215" width="300" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eR2-Ls-4rx" userLabel="AnimationView">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="RcS-2w-XEs"/>
+                                            <constraint firstAttribute="height" constant="50" id="Wri-pe-2pV"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcc-df-KAx">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="N4O-Dm-Tof"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Sign in">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pjp-t0-RGD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSi-tL-42P">
+                                        <rect key="frame" x="150" y="0.0" width="150" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="f1D-Xh-1lT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Sign up">
+                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signUpTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YX7-Tg-iab"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="73F-hh-uoj"/>
+                                    <constraint firstAttribute="height" constant="50" id="Fqm-HS-3yn"/>
+                                    <constraint firstAttribute="trailing" secondItem="qSi-tL-42P" secondAttribute="trailing" id="LTG-yn-Rbx"/>
+                                    <constraint firstItem="eR2-Ls-4rx" firstAttribute="top" secondItem="ObH-l0-PHu" secondAttribute="top" id="TI5-gu-ffz"/>
+                                    <constraint firstAttribute="bottom" secondItem="dcc-df-KAx" secondAttribute="bottom" id="eI3-Ma-7QK"/>
+                                    <constraint firstItem="eR2-Ls-4rx" firstAttribute="leading" secondItem="ObH-l0-PHu" secondAttribute="leading" id="gPJ-re-NWC"/>
+                                    <constraint firstItem="dcc-df-KAx" firstAttribute="leading" secondItem="ObH-l0-PHu" secondAttribute="leading" id="hnI-o3-YaK"/>
+                                    <constraint firstItem="qSi-tL-42P" firstAttribute="top" secondItem="ObH-l0-PHu" secondAttribute="top" id="nfQ-Y1-bvv"/>
+                                    <constraint firstAttribute="bottom" secondItem="qSi-tL-42P" secondAttribute="bottom" id="oeL-a1-f4s"/>
+                                    <constraint firstAttribute="bottom" secondItem="eR2-Ls-4rx" secondAttribute="bottom" id="wVo-DU-dh2"/>
+                                    <constraint firstItem="dcc-df-KAx" firstAttribute="top" secondItem="ObH-l0-PHu" secondAttribute="top" id="wk8-Dz-RuO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="tableBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="U6h-P2-XYy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WKS-FH-raB"/>
-                            <constraint firstItem="U6h-P2-XYy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="loW-AH-aNF"/>
-                            <constraint firstItem="U6h-P2-XYy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="s50-ga-LQL"/>
+                            <constraint firstItem="Lc7-mU-RUZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="97G-4s-TsK"/>
+                            <constraint firstItem="Lc7-mU-RUZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="99G-Fh-pv6"/>
+                            <constraint firstItem="Lc7-mU-RUZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dxc-6G-fz9"/>
+                            <constraint firstItem="ObH-l0-PHu" firstAttribute="top" secondItem="Lc7-mU-RUZ" secondAttribute="bottom" constant="20" id="iiZ-3E-Y7I"/>
+                            <constraint firstItem="ObH-l0-PHu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sjl-C6-DPN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="animationView" destination="eR2-Ls-4rx" id="kRq-pW-LY9"/>
+                        <outlet property="containerView" destination="ObH-l0-PHu" id="AN4-ko-M6F"/>
+                        <outlet property="leadingConstraint" destination="gPJ-re-NWC" id="j0e-xk-5Z2"/>
+                        <outlet property="signInButton" destination="dcc-df-KAx" id="mlm-kb-cFX"/>
+                        <outlet property="signUpButton" destination="qSi-tL-42P" id="UQR-IC-fWq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,7 +106,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Mask group" width="375" height="232"/>
+        <image name="Ellipse 1-3" width="375" height="143"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="tableBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
