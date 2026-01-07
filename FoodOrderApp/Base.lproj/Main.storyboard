@@ -170,20 +170,121 @@
             </objects>
             <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="163-A3-IOH">
+        <!--Tab Bar Controller-->
+        <scene sceneID="HAn-p7-4hF">
             <objects>
-                <viewController id="8zQ-Pa-x19" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tDz-Wh-YEP">
+                <tabBarController id="lyg-BI-7pq" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pYf-QK-n6F">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3s6-Bh-lIE" kind="relationship" relationship="viewControllers" id="oU4-vL-diA"/>
+                        <segue destination="ePw-HF-ag0" kind="relationship" relationship="viewControllers" id="ebz-yn-NMa"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fS8-J3-brH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836" y="4"/>
+        </scene>
+        <!--Home Controller-->
+        <scene sceneID="wyb-sq-bUs">
+            <objects>
+                <viewController storyboardIdentifier="HomeController" id="jUT-OE-nOt" customClass="HomeController" customModule="FoodOrderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YoP-IV-eN2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="uUT-fO-VJL"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="msX-sC-Uy0">
+                                <rect key="frame" x="0.0" y="213" width="393" height="522"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NZ5-FM-g6f">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="At8-r8-rC4">
+                                <rect key="frame" x="16" y="162" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PN3-R9-l5b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PN3-R9-l5b" firstAttribute="trailing" secondItem="At8-r8-rC4" secondAttribute="trailing" constant="16" id="4rO-1r-1vI"/>
+                            <constraint firstItem="PN3-R9-l5b" firstAttribute="trailing" secondItem="msX-sC-Uy0" secondAttribute="trailing" id="DY2-9j-QJ4"/>
+                            <constraint firstItem="At8-r8-rC4" firstAttribute="leading" secondItem="PN3-R9-l5b" secondAttribute="leading" constant="16" id="mhz-8h-2tV"/>
+                            <constraint firstItem="msX-sC-Uy0" firstAttribute="leading" secondItem="PN3-R9-l5b" secondAttribute="leading" id="o8i-6g-rIA"/>
+                            <constraint firstItem="PN3-R9-l5b" firstAttribute="bottom" secondItem="msX-sC-Uy0" secondAttribute="bottom" id="vcY-Wd-BQW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bI3-pE-05H"/>
+                    <connections>
+                        <outlet property="collection" destination="msX-sC-Uy0" id="yVC-5X-nfd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C9z-d1-wLR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2562.5954198473282" y="-279.57746478873241"/>
+        </scene>
+        <!--Basket Controller-->
+        <scene sceneID="y0c-X4-pLV">
+            <objects>
+                <viewController storyboardIdentifier="BasketController" id="fzg-0f-zEv" customClass="BasketController" customModule="FoodOrderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f1q-3u-S0I">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hc7-oY-VBi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Kjd-Ds-Ka2"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="99C-EH-qoL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lbj-hu-5rw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="769" y="4"/>
+            <point key="canvasLocation" x="2562.5954198473282" y="403.52112676056339"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="TqS-Ip-Yxr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3s6-Bh-lIE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="material-symbols_home-rounded" id="o6T-Mq-tdf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f9N-c8-kuo">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jUT-OE-nOt" kind="relationship" relationship="rootViewController" id="Kzk-TU-Tm6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TrS-aA-wRy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1635.8778625954199" y="-279.57746478873241"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="xHQ-ud-SfS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ePw-HF-ag0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="material-symbols_add-shopping-cart" id="WwF-DA-OG4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Km6-Fc-Quf">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fzg-0f-zEv" kind="relationship" relationship="rootViewController" id="Hm8-9q-tc9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rBC-fP-iyA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1635.8778625954199" y="403.52112676056339"/>
         </scene>
     </scenes>
     <resources>
@@ -191,6 +292,8 @@
         <image name="Line 1" width="235" height="1"/>
         <image name="Vector" width="35" height="34"/>
         <image name="ic_baseline-reddit" width="35" height="35"/>
+        <image name="material-symbols_add-shopping-cart" width="30" height="28"/>
+        <image name="material-symbols_home-rounded" width="32" height="33"/>
         <image name="mdi_twitter" width="35" height="34"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
