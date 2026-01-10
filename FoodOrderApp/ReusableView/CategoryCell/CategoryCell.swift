@@ -15,5 +15,12 @@ class CategoryCell: UICollectionViewCell {
         super.awakeFromNib()
      
     }
+    func configure(model: Category, selected: Bool) {
+        nameLabel.text = model.name
+        image.image = UIImage(named: model.image ?? "")
+        backgroundColor = selected ? .systemRed : .systemGray5
+        nameLabel.textColor = selected ? .white : .black
+        layer.cornerRadius = 20
+    }
 
 }

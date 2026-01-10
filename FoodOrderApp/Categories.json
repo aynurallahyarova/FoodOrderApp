@@ -1,0 +1,26 @@
+{
+  "categories": [
+    { "id": 1, "name": "Burger", "image": "burger" },
+    { "id": 2, "name": "Pizza", "image": "pizza" },
+    { "id": 3, "name": "Drink", "image": "drink" }
+  ],
+  "foods": [
+    {
+      "id": 1,
+      "name": "Beef Burger",
+      "ingredients": "Chessy Mazarella",
+      "price": 63,
+      "image": "burger1",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "King Sundae",
+      "ingredients": "Chocolate",
+      "price": 23,
+      "image": "sundae",
+      "categoryId": 3
+    }
+  ]
+}
+
