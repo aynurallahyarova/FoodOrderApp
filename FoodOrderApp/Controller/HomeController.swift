@@ -49,6 +49,7 @@ class HomeController: UIViewController {
         viewModel.fetchData()
     }
 }
+
 extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int { 2 }
@@ -61,6 +62,43 @@ extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate {
             return viewModel.filteredFoods().count
             
         }
+        
+    }
+    func collectionView(
+        _ collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        at indexPath: IndexPath
+    ) -> UICollectionReusableView {
+        
+        let header = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: "HomeHeader",
+            for: indexPath
+        ) as! HomeHeader
+        
+        header.categoriesLabel.text = "Categories"
+        header.popularLabel.text = "Popular Now"
+        
+        header.categories = viewModel.categories
+        header.collection.reloadData()
+        
+        header.onSelect = { [weak self] id in
+            self?.viewModel.selectedCategoryId = id
+            self?.collection.reloadSections(IndexSet(integer: 1))
+        }
+        
+        return header
+    }
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        
+        if indexPath.section == 0 {
+            let category = viewModel.categories[indexPath.item]
+            viewModel.selectedCategoryId = category.id
+            collection.reloadSections(IndexSet(integer: 1))
+        }
+
+
         
     }
     
@@ -86,49 +124,7 @@ extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate {
             return cell
         }
     }
-    func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
-        
-        if indexPath.section == 0 {
-            let category = viewModel.categories[indexPath.item]
-            viewModel.selectedCategoryId = category.id
-            collection.reloadSections(IndexSet(integer: 1))
-        }
-        func collectionView(
-            _ collectionView: UICollectionView,
-            viewForSupplementaryElementOfKind kind: String,
-            at indexPath: IndexPath
-        ) -> UICollectionReusableView {
-            
-            let header = collectionView.dequeueReusableSupplementaryView(
-                ofKind: kind,
-                withReuseIdentifier: "HomeHeader",
-                for: indexPath
-            ) as! HomeHeader
-            
-            header.categoriesLabel.text = "Categories"
-            header.popularLabel.text = "Popular"
-            
-            header.categories = viewModel.categories
-            header.collection.reloadData()
-            
-            header.onSelect = { id in
-                print("Seçilən category id:", id)
-            }
-            
-            return header
-        }
-        func collectionView(
-            _ collectionView: UICollectionView,
-            layout collectionViewLayout: UICollectionViewLayout,
-            referenceSizeForHeaderInSection section: Int
-        ) -> CGSize {
-            
-            CGSize(width: collectionView.frame.width, height: 260)
-        }
-        
-        
-    }
+
     
     //extension HomeController {
     //
@@ -152,19 +148,30 @@ extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate {
     
 }
 extension HomeController: UICollectionViewDelegateFlowLayout {
-    
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
+
+        if section == 0 {
+            return CGSize(width: collectionView.frame.width, height: 300)
+        } else {
+            return .zero
+        }
+    }
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if indexPath.section == 0 {
-            return CGSize(width: 100, height: 40)   // Category
+            return CGSize(width: 100, height: 40)
         } else {
             let width = (collectionView.frame.width - 24) / 2
-            return CGSize(width: width, height: 220) // Popular
+            return CGSize(width: width, height: 220)
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         scrollDirectionForSectionAt section: Int) -> UICollectionView.ScrollDirection {

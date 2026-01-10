@@ -30,7 +30,7 @@ class HomeHeader: UICollectionReusableView {
         collection.reloadData()
     }
 }
-extension HomeHeader: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeHeader: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories.count
     }
@@ -50,5 +50,9 @@ extension HomeHeader: UICollectionViewDelegate, UICollectionViewDataSource {
         selectedIndex = indexPath.item
         onSelect?(categories[indexPath.item].id ?? 0)
         collectionView.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 40)
     }
 }
