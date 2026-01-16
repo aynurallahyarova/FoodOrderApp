@@ -24,7 +24,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmH-na-pHh">
-                        <rect key="frame" x="59" y="25" width="103" height="21"/>
+                        <rect key="frame" x="59" y="25.333333333333336" width="115" height="20.333333333333336"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,7 +37,7 @@
                 <constraint firstItem="FmH-na-pHh" firstAttribute="leading" secondItem="lF0-Lm-3x2" secondAttribute="trailing" constant="12" id="4H1-RL-YHu"/>
                 <constraint firstItem="FmH-na-pHh" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="d7V-wD-fWg"/>
                 <constraint firstItem="lF0-Lm-3x2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="dpd-Ur-yb2"/>
-                <constraint firstAttribute="trailing" secondItem="FmH-na-pHh" secondAttribute="trailing" constant="12" id="yat-kY-fro"/>
+                <constraint firstAttribute="trailing" secondItem="FmH-na-pHh" secondAttribute="trailing" id="yat-kY-fro"/>
             </constraints>
             <size key="customSize" width="174" height="71"/>
             <connections>

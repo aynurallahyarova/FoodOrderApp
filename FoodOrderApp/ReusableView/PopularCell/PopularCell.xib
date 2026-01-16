@@ -50,6 +50,15 @@
                             <constraint firstAttribute="width" constant="215" id="7Uy-yX-W6L"/>
                         </constraints>
                     </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eat-KX-siv">
+                        <rect key="frame" x="236" y="6" width="30" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="YGI-WG-p10"/>
+                            <constraint firstAttribute="height" constant="35" id="ykI-a4-rGe"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="gray" image="material-symbols_add-shopping-cart" title=""/>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -59,6 +68,8 @@
                 <constraint firstAttribute="bottom" secondItem="U3b-4h-LoS" secondAttribute="bottom" constant="15" id="9MH-aC-dmE"/>
                 <constraint firstItem="G0X-GA-EkR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="Ds1-oD-IRQ"/>
                 <constraint firstAttribute="trailing" secondItem="U3b-4h-LoS" secondAttribute="trailing" constant="30" id="Is9-an-6wK"/>
+                <constraint firstItem="eat-KX-siv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="VWW-me-l0e"/>
+                <constraint firstAttribute="trailing" secondItem="eat-KX-siv" secondAttribute="trailing" constant="8" id="ZUI-0O-6Gr"/>
                 <constraint firstAttribute="trailing" secondItem="G0X-GA-EkR" secondAttribute="trailing" constant="30" id="kcD-qS-KVu"/>
             </constraints>
             <size key="customSize" width="274" height="240"/>
@@ -71,4 +82,7 @@
             <point key="canvasLocation" x="170.99236641221373" y="85.91549295774648"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="material-symbols_add-shopping-cart" width="30" height="28"/>
+    </resources>
 </document>

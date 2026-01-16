@@ -20,6 +20,7 @@ struct Food: Codable {
     let categoryId: Int?
     let ingredients: String?
 }
+
 struct HomeModel: Codable {
     let categories: [Category]?
     let foods: [Food]?

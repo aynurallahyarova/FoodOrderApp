@@ -8,23 +8,24 @@
 import Foundation
 
 class DataManager {
-    var categories: [Category] = []
-    var foods: [Food] = []
-    var completion: ((String?)-> Void)?
+//    var categories: [Category] = []
+//    var foods: [Food] = []
+    
+    var completion: ((HomeModel?, String?)-> Void)?
     func getHomeData() {
         guard let url = Bundle.main.url(forResource: "Categories", withExtension: "json") else {
-            completion?("Data file not found")
+            completion?(nil, "Data file not found")
             return
         }
         
         do {
             let data = try Data(contentsOf: url)
             let model = try JSONDecoder().decode(HomeModel.self, from: data)
-            categories = model.categories ?? []
-            foods = model.foods ?? []
-            completion?(nil)
+//            categories = model.categories ?? []
+//            foods = model.foods ?? []
+            completion?(model, nil)
         } catch {
-            completion?(error.localizedDescription)
+            completion?(nil, error.localizedDescription)
             
         }
     }

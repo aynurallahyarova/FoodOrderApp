@@ -7,20 +7,19 @@
 
 
 class HomeViewModel {
-
     private let manager = DataManager()
-
-    var categories = [Category]()
+    
     var foods = [Food]()
+    var categories = [Category]()
     var selectedCategoryId: Int?
 
     var onUpdate: (() -> Void)?
 
     func fetchData() {
-        manager.completion = { [weak self] error in
+        manager.completion = { [weak self] model, error in
             if error == nil {
-                self?.categories = self?.manager.categories ?? []
-                self?.foods = self?.manager.foods ?? []
+                self?.categories = model?.categories ?? [] //self?.manager.categories ?? []
+                self?.foods = model?.foods ?? []
                 self?.onUpdate?()
             }
         }
