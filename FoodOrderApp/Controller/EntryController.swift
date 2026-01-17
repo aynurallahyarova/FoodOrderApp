@@ -7,7 +7,8 @@
 
 import UIKit
 
-class EntryController: UIViewController {
+class EntryController: UIViewController, EntryviewModelDelegate {
+    
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var resultButton: UIButton!
@@ -18,12 +19,29 @@ class EntryController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     
+    private let viewModel = EntryViewModel()
+    private var isSignInMode = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configureUI()
+        viewModel.delegate = self
+        configureSegment(isSignInTapped: true)
     }
-    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true)
+    }
+    func changeRoot() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+       
+                if let tabBarVC = storyboard.instantiateViewController(withIdentifier: "TabbarController") as? UITabBarController {
+                    if let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate {
+                        sceneDelegate.changeRoot(to: tabBarVC)
+                    }
+                }
+            }
     private func configureUI() {
         containerView.clipsToBounds = true
         containerView.layer.cornerRadius = containerView.frame.height / 2
@@ -36,6 +54,7 @@ class EntryController: UIViewController {
     }
     
     private func configureSegment(isSignInTapped: Bool) {
+        self.isSignInMode = isSignInTapped
         confirmePasswordText.isHidden = isSignInTapped
         leadingConstraint.constant = isSignInTapped ? 0 : 150
         UIView.animate(withDuration: 0.3) {
@@ -56,6 +75,12 @@ class EntryController: UIViewController {
     }
     
     @IBAction func resultButtonTapped(_ sender: Any) {
-        
-    }
+        if isSignInMode {
+                    viewModel.signIn(email: emailTextField.text, password: passwordTextField.text)
+                } else {
+                    viewModel.SignUp(email: emailTextField.text,
+                                     password: passwordTextField.text,
+                                     confirmPassword: confirmePasswordText.text)
+                }
+            }
 }
