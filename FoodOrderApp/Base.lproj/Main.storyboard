@@ -291,22 +291,6 @@
             </objects>
             <point key="canvasLocation" x="2562.5954198473282" y="-279.57746478873241"/>
         </scene>
-        <!--Basket Controller-->
-        <scene sceneID="y0c-X4-pLV">
-            <objects>
-                <viewController storyboardIdentifier="BasketController" id="fzg-0f-zEv" customClass="BasketController" customModule="FoodOrderApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="f1q-3u-S0I">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="hc7-oY-VBi"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Kjd-Ds-Ka2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lbj-hu-5rw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2562.5954198473282" y="403.52112676056339"/>
-        </scene>
         <!--Item-->
         <scene sceneID="TqS-Ip-Yxr">
             <objects>
@@ -338,12 +322,60 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="fzg-0f-zEv" kind="relationship" relationship="rootViewController" id="Hm8-9q-tc9"/>
+                        <segue destination="g0W-92-ZnS" kind="relationship" relationship="rootViewController" id="xRO-hh-bbh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBC-fP-iyA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1635.8778625954199" y="403.52112676056339"/>
+        </scene>
+        <!--Basket Controller-->
+        <scene sceneID="I1O-42-qcj">
+            <objects>
+                <viewController storyboardIdentifier="BasketController" id="g0W-92-ZnS" customClass="BasketController" customModule="FoodOrderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DZo-9J-bpa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IVB-FR-QWo">
+                                <rect key="frame" x="0.0" y="162" width="393" height="573"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZP2-vE-y1h">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuI-zT-cTH">
+                                <rect key="frame" x="0.0" y="743" width="393" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MzD-HZ-GT7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QuI-zT-cTH" secondAttribute="bottom" constant="88" id="HXL-rz-vq9"/>
+                            <constraint firstItem="MzD-HZ-GT7" firstAttribute="bottom" secondItem="IVB-FR-QWo" secondAttribute="bottom" id="IDI-L5-6uh"/>
+                            <constraint firstItem="IVB-FR-QWo" firstAttribute="top" secondItem="MzD-HZ-GT7" secondAttribute="top" id="JX2-99-ScD"/>
+                            <constraint firstAttribute="trailing" secondItem="QuI-zT-cTH" secondAttribute="trailing" id="Mv5-kf-QDo"/>
+                            <constraint firstItem="MzD-HZ-GT7" firstAttribute="trailing" secondItem="IVB-FR-QWo" secondAttribute="trailing" id="SxB-wC-XSU"/>
+                            <constraint firstItem="QuI-zT-cTH" firstAttribute="leading" secondItem="DZo-9J-bpa" secondAttribute="leading" id="VCM-7z-N1a"/>
+                            <constraint firstItem="IVB-FR-QWo" firstAttribute="leading" secondItem="MzD-HZ-GT7" secondAttribute="leading" id="kro-KG-CST"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="93e-xw-ty5"/>
+                    <connections>
+                        <outlet property="collection" destination="IVB-FR-QWo" id="SgH-mP-HyD"/>
+                        <outlet property="totalLabel" destination="QuI-zT-cTH" id="mVv-Ps-tnY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h1q-iW-gzD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2429.770992366412" y="403.52112676056339"/>
         </scene>
     </scenes>
     <resources>

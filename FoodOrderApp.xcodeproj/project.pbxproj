@@ -6,13 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		2C9F22A92F1B894900D8FBEC /* BasketModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C9F22A72F1B894900D8FBEC /* BasketModel.xcdatamodeld */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		2C7528792F07B86F00CAE6CE /* FoodOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C9F22A82F1B894900D8FBEC /* BasketModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BasketModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -50,7 +45,6 @@
 		2C7528702F07B86F00CAE6CE = {
 			isa = PBXGroup;
 			children = (
-				2C9F22A72F1B894900D8FBEC /* BasketModel.xcdatamodeld */,
 				2C75287B2F07B86F00CAE6CE /* FoodOrderApp */,
 				2C75287A2F07B86F00CAE6CE /* Products */,
 			);
@@ -138,7 +132,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C9F22A92F1B894900D8FBEC /* BasketModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,19 +333,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		2C9F22A72F1B894900D8FBEC /* BasketModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2C9F22A82F1B894900D8FBEC /* BasketModel.xcdatamodel */,
-			);
-			currentVersion = 2C9F22A82F1B894900D8FBEC /* BasketModel.xcdatamodel */;
-			path = BasketModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 2C7528712F07B86F00CAE6CE /* Project object */;
 }
