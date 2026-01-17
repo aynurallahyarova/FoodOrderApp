@@ -25,9 +25,15 @@ class HomeViewModel {
         }
         manager.getHomeData()
     }
-
-    func filteredFoods() -> [Food] {
-        guard let id = selectedCategoryId else { return foods }
-        return foods.filter { $0.categoryId == id }
+    func filteredFoods(searchText: String = "") -> [Food] {
+        var result = foods
+        if let id = selectedCategoryId, id != 0 {
+            result = result.filter { $0.categoryId == id }
+        }
+        if !searchText.isEmpty {
+            result = result.filter { $0.name?.lowercased().contains(searchText.lowercased()) ?? false }
+        }
+        return result
     }
+
 }

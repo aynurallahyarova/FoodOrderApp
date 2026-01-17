@@ -196,7 +196,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="At8-r8-rC4">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="At8-r8-rC4">
                                 <rect key="frame" x="16" y="166" width="361" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -285,6 +285,7 @@
                     <connections>
                         <outlet property="categoryCollection" destination="w79-p1-8eH" id="86b-te-O93"/>
                         <outlet property="foodCollection" destination="BGt-Yt-qw0" id="eN2-EB-W3V"/>
+                        <outlet property="searchTextField" destination="At8-r8-rC4" id="1en-M3-EAO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9z-d1-wLR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
